@@ -1,0 +1,30 @@
+extends layouts/post.jade
+
+include mixins/comments.jade
+include mixins/popular
+
+block title
+    | Little Pizzeria Review
+
+block author
+    | Ludwig van Beethoven
+
+block date
+    | Posted on January 18th, 2014 at 6:00 PM
+
+block image
+    img.img-responsive(src='images/little-pizzeria.png')
+
+block content
+    | Very fucking fast delivery! Two Thumbs up! Experience the modern mastery of acclaimed chef Yves Durif
+    | and his team, in an intimate little pizzeria. Durif's passion for his craft is evident in the details: luxe yet
+    | tasting textures, a synergy between ingredients, flavors and textures that emphasizes the whole dining experience.
+
+block popular
+    -collection = []
+    -collection.push({link:'golden-dragon.html', text:'Golden Dragon'});
+    mixin comments(collection)
+
+block comments
+    -collection = [];
+    mixin comments(collection)
